@@ -15,11 +15,12 @@ function findUniqueSymbol(text) {
     arrOfLetter.shift(firstUniqueLetter);
     // console.log(arrOfLetter[0]);
     console.log(arrOfLetter);
-    for (let i = arrOfLetter.length; i >= 0; i -= 1) {
+    for (let i = 0; i < arrOfLetter.length; i += 1) {
       if (arrOfLetter.includes(firstUniqueLetter)) {
         firstUniqueLetter = arrOfLetter[i];
+        arrOfLetter.shift(i);
       }
-      arrOfLetter.shift(i);
+
       console.log(arrOfLetter.includes(firstUniqueLetter));
     }
     console.log(firstUniqueLetter);
