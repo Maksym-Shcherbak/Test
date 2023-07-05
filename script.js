@@ -19,6 +19,7 @@ function findUniqueSymbol(text) {
       if (arrOfLetter.includes(firstUniqueLetter)) {
         firstUniqueLetter = arrOfLetter[i];
         arrOfLetter.shift(i);
+        i -= 1;
       }
 
       console.log(arrOfLetter.includes(firstUniqueLetter));
