@@ -2,6 +2,7 @@ let textFromUser = prompt("").replace(/[^a-zа-яіїєґ ]/gi, "");
 console.log(textFromUser);
 const firstUniqueChar = findUniqueSymbol(textFromUser);
 alert(`First unique symbol is ${firstUniqueChar}`);
+location.reload();
 
 function findUniqueSymbol(text) {
   let firstUniqueLetter;
