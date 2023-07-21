@@ -15,12 +15,16 @@ if (textFromUser === null) {
       .reduce((noRepeatChar, word) => {
         console.log(word);
         noRepeatChar.push(
-          word.split("").find((n, i, a) => a.indexOf(n) === a.lastIndexOf(n))
+          word
+            .split("")
+            .find(
+              (char, idx, arr) => arr.indexOf(char) === arr.lastIndexOf(char)
+            )
         );
         return noRepeatChar;
       }, [])
       //знаходимо унікальний символ
-      .find((n, i, a) => a.indexOf(n) === a.lastIndexOf(n));
+      .find((char, idx, arr) => arr.indexOf(char) === arr.lastIndexOf(char));
     uniChar
       ? alert(`First unique symbol is ${uniChar}`)
       : alert(`First unique symbol is not find`);
