@@ -13,15 +13,14 @@ if (textFromUser === null) {
     const uniChar = arrFromText
       //використовуючи метод reduce, створюємо масив з унікальних символів у кожному слові
       .reduce((noRepeatChar, word) => {
-        console.log(word);
-        noRepeatChar.push(
+        return [
+          ...noRepeatChar,
           word
             .split("")
             .find(
               (char, idx, arr) => arr.indexOf(char) === arr.lastIndexOf(char)
-            )
-        );
-        return noRepeatChar;
+            ),
+        ];
       }, [])
       //знаходимо унікальний символ
       .find((char, idx, arr) => arr.indexOf(char) === arr.lastIndexOf(char));
